@@ -41,6 +41,15 @@
   <!-- ===== SVG SPRITE ===== -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
+      <symbol id="shirt" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 20H8v-9.5L6.5 13L5 11.5L9 6h6l4 5.5l-1.5 1.5L16 10.5V20h-3v-5h-2v5Z"/>
+      </symbol>
+      <symbol id="book" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M6 22q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h14v16H6q-.425 0-.712.288T5 19q0 .425.288.713T6 20h14v2H6Z"/>
+      </symbol>
+      <symbol id="tool" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19.92 12.08L15 17L12.58 14.58L10 17.17v2.83l-4 4l-4-4l4-4h2.83l2.59-2.59L8.92 10.92a4.986 4.986 0 0 1-5.63-7.55A4.978 4.978 0 0 1 10.92 4.08l-2 2L10 7.17l1.08-1.08l2 2l-2 2l3.42 3.42l4.92-4.92A4.986 4.986 0 0 1 20.63 2.08a4.978 4.978 0 0 1-5.55 7.55l2 2l1.08-1.08l2 2l-1.08 1.08l2 2l-1.16 1.16Z"/>
+      </symbol>
       <symbol id="instagram" viewBox="0 0 15 15">
         <path fill="none" stroke="currentColor"
           d="M11 3.5h1M4.5.5h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Zm3 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z" />
@@ -242,28 +251,22 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-center flex-grow-1 gap-1 gap-lg-4">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html" id="nav-home">Home</a>
+                  <a class="nav-link active" href="#billboard" id="nav-home">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownBrowse" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Browse</a>
+                  <a class="nav-link dropdown-toggle" href="#categories" id="dropdownBrowse" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Browse Categories</a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownBrowse">
-                    <li><a href="#" class="dropdown-item">clothes</a></li>
-                    <li><a href="#" class="dropdown-item">Books &amp; Library</a></li>
-                    <li><a href="#" class="dropdown-item">Tools &amp; Hardware</a></li>
-                    <li><a href="#" class="dropdown-item">Electronics</a></li>
-                    <li><a href="#" class="dropdown-item">Kids &amp; Toys</a></li>
-                    <li><a href="#" class="dropdown-item">Sports &amp; Outdoor</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-clothes')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#shirt"></use></svg>Clothes</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-books')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#book"></use></svg>Books</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-tools')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#tool"></use></svg>Tools</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" id="nav-how">How It Works</a>
+                  <a class="nav-link" href="#how-it-works" id="nav-how">How It Works</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" id="nav-community">Community</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" id="nav-about">About</a>
+                  <a class="nav-link" href="#footer" id="nav-about">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -389,7 +392,7 @@
   <!-- ======================================================
        HOW IT WORKS / FEATURES
   ======================================================= -->
-  <section class="features">
+  <section class="features" id="how-it-works">
     <div class="container">
       <div class="features-header" data-aos="fade-up">
         <p class="label">Simple Process</p>
