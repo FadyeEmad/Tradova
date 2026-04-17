@@ -144,7 +144,7 @@
     <div class="search-popup-container">
       <form role="search" method="get" class="form-group" action="">
         <input type="search" id="search-form" class="form-control border-0 border-bottom"
-          placeholder="What are you looking to swap today?" value="" name="s" />
+          placeholder="What are you looking to buy today?" value="" name="s" />
         <button type="submit" class="search-submit border-0 position-absolute bg-transparent"
           style="top:50%;right:0;transform:translateY(-50%);">
           <svg width="22" height="22" viewBox="0 0 24 24">
@@ -286,16 +286,11 @@
             Cart <span id="cart-count-badge"
               style="background:#2D5A27;color:white;border-radius:99px;padding:1px 7px;font-size:0.65rem;font-weight:700;display:none;">0</span>
           </button>
-          <a href="#" class="nav-action-btn" id="nav-profile" aria-label="Profile">
-            <svg width="18" height="18" viewBox="0 0 24 24">
-              <use xlink:href="#user"></use>
-            </svg>
-            Profile
-          </a>
-          <a href="#" class="btn btn-primary btn-sm" id="post-item-nav-btn"
-            style="font-size:0.82rem;padding:8px 16px;min-height:38px;">
+
+          <button class="btn btn-primary btn-sm" id="post-item-nav-btn" data-bs-toggle="modal" data-bs-target="#postItemModal"
+            style="font-size:0.82rem;padding:8px 16px;min-height:38px;border:none;">
             + Post Item
-          </a>
+          </button>
         </div>
 
       </div>
@@ -315,7 +310,7 @@
             <svg viewBox="0 0 24 24">
               <use xlink:href="#leaf"></use>
             </svg>
-            Sustainable Swapping
+            Sustainable Shopping
           </div>
 
           <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="100">
@@ -323,7 +318,7 @@
           </h1>
 
           <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">
-            Don't throw it. <strong>Tradova it.</strong> Join thousands of people swapping clothes,
+            <strong class="hero-highlight">Don't throw it. Tradova it.</strong> Join thousands of people shopping clothes,
             books, and tools — reducing waste and saving money together.
           </p>
 
@@ -332,19 +327,19 @@
             <svg width="18" height="18" viewBox="0 0 24 24" style="color:#888;flex-shrink:0;">
               <use xlink:href="#search"></use>
             </svg>
-            <input type="text" id="hero-search-input" placeholder="What are you looking to swap today?"
-              aria-label="Search items to swap">
+            <input type="text" id="hero-search-input" placeholder="What are you looking to buy today?"
+              aria-label="Search items to buy">
             <button type="button" id="hero-search-btn">Search</button>
           </div>
 
           <div class="hero-actions" data-aos="fade-up" data-aos-delay="350">
-            <a href="#" class="btn btn-primary" id="hero-post-btn">
+            <button class="btn btn-primary" id="hero-post-btn" data-bs-toggle="modal" data-bs-target="#postItemModal" style="border:none;">
               <svg width="16" height="16" viewBox="0 0 24 24">
                 <use xlink:href="#plus"></use>
               </svg>
               Post an Item
-            </a>
-            <a href="#new-arrival" class="btn btn-outline-tradova" id="hero-browse-btn">
+            </button>
+            <a href="#products" class="btn btn-outline-tradova" id="hero-browse-btn">
               Browse Items
             </a>
           </div>
@@ -427,11 +422,11 @@
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#message"></use>
+                <use xlink:href="#shopping-bag"></use>
               </svg>
             </div>
-            <h4>Offer a Swap</h4>
-            <p>Send a swap request and chat directly with the owner to agree on an exchange.</p>
+            <h4>Secure Checkout</h4>
+            <p>Add to cart and complete checkout securely with cash on delivery.</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
@@ -441,8 +436,8 @@
                 <use xlink:href="#leaf"></use>
               </svg>
             </div>
-            <h4>Swap &amp; Sustain</h4>
-            <p>Exchange items, reduce waste, and grow your sustainable lifestyle.</p>
+            <h4>Shop &amp; Sustain</h4>
+            <p>Buy pre-loved items, reduce waste, and grow your sustainable lifestyle.</p>
           </div>
         </div>
       </div>
@@ -456,12 +451,12 @@
     <div class="container">
       <div class="d-flex align-items-end justify-content-between mb-4" data-aos="fade-up">
         <div>
-          <span class="section-label">What to Swap</span>
+          <span class="section-label">What to Buy</span>
           <h2 class="section-title-lg mb-0">Browse Categories</h2>
         </div>
         <a href="#" class="btn-link d-none d-md-flex" id="browse-all-cats-btn">See all categories</a>
       </div>
-      <div class="row g-3 open-up" data-aos="zoom-out">
+      <div class="row g-3 open-up justify-content-center" data-aos="zoom-out">
         <!-- Apparel -->
         <div class="col-6 col-md-4">
           <div class="cat-card" id="cat-apparel">
@@ -484,7 +479,7 @@
         <!-- Books -->
         <div class="col-6 col-md-4">
           <div class="cat-card" id="cat-books">
-            <img src="images/cat-item2.jpg" alt="Books and Library category">
+            <img src="images/Books/8a7b1700538f90df9c53ba5b1328aaca.jpg" alt="Books and Library category">
             <div class="cat-overlay">
               <div class="cat-icon">
                 <!-- Book line icon -->
@@ -501,7 +496,7 @@
           </div>
         </div>
         <!-- Tools -->
-        <div class="col-12 col-md-4">
+        <div class="col-6 col-md-4">
           <div class="cat-card" id="cat-tools">
             <img src="images/cat-item3.jpg" alt="Tools category">
             <div class="cat-overlay">
@@ -558,8 +553,9 @@
             <span class="item-category">Clothes</span>
             <h6 class="product-title">Casual Cotton Shirt</h6>
             <span class="item-condition">Condition: Excellent · Size L</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$110</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Casual Cotton Shirt" data-category="Clothes"
+              data-name="Casual Cotton Shirt" data-category="Clothes" data-price="110"
               data-img="images/Clothes/banner-image-1.jpg">Add to Cart</button>
           </div>
         </div>
@@ -574,8 +570,9 @@
             <span class="item-category">Clothes</span>
             <h6 class="product-title">Vintage Outfit</h6>
             <span class="item-condition">Condition: Good · Size M</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$135</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Vintage Jacket" data-category="Clothes"
+              data-name="Vintage Jacket" data-category="Clothes" data-price="135"
               data-img="images/Clothes/1cecf33ee0278c3bf6f7718e0228cd1a.jpg">Add to Cart</button>
           </div>
         </div>
@@ -590,8 +587,9 @@
             <span class="item-category">Clothes</span>
             <h6 class="product-title"> Old Money Outfit</h6>
             <span class="item-condition">Condition: Like New · Size S</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$150</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Linen Summer Dress" data-category="Clothes"
+              data-name="Linen Summer Dress" data-category="Clothes" data-price="150"
               data-img="images/Clothes/6b15f3ded429f410e5475d7496b6fc37.jpg">Add to Cart</button>
           </div>
         </div>
@@ -600,8 +598,8 @@
         <div class="product-card product-card-cta">
           <div class="product-card-cta-inner">
             <svg width="36" height="36" viewBox="0 0 24 24" style="color:#2D5A27;"><use xlink:href="#plus"></use></svg>
-            <p>Have clothes to swap?</p>
-            <a href="#" class="btn btn-outline-tradova btn-sm">Post an Item</a>
+            <p>Have clothes to sell?</p>
+            <button class="btn btn-outline-tradova btn-sm" data-bs-toggle="modal" data-bs-target="#postItemModal">Post an Item</button>
           </div>
         </div>
       </div>
@@ -618,8 +616,9 @@
             <span class="item-category">Books</span>
             <h6 class="product-title">Forest Collection</h6>
             <span class="item-condition">Condition: Very Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$45</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Novel Collection" data-category="Books"
+              data-name="Novel Collection" data-category="Books" data-price="45"
               data-img="images/Books/8a7b1700538f90df9c53ba5b1328aaca.jpg">Add to Cart</button>
           </div>
         </div>
@@ -634,8 +633,9 @@
             <span class="item-category">Books</span>
             <h6 class="product-title">Self-Development Book</h6>
             <span class="item-condition">Condition: Like New</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$60</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Self-Development Book" data-category="Books"
+              data-name="Self-Development Book" data-category="Books" data-price="60"
               data-img="images/Books/8d2bea04d7ee666ab74e47084cf707ad.jpg">Add to Cart</button>
           </div>
         </div>
@@ -650,8 +650,9 @@
             <span class="item-category">Books</span>
             <h6 class="product-title">Science &amp; Tech Book</h6>
             <span class="item-condition">Condition: Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$75</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Science &amp; Tech Book" data-category="Books"
+              data-name="Science &amp; Tech Book" data-category="Books" data-price="75"
               data-img="images/Books/96c3980f6c14c046ad3f231dc15efd3d.jpg">Add to Cart</button>
           </div>
         </div>
@@ -666,8 +667,9 @@
             <span class="item-category">Books</span>
             <h6 class="product-title">Classic Literature</h6>
             <span class="item-condition">Condition: Excellent</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$85</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Classic Literature" data-category="Books"
+              data-name="Classic Literature" data-category="Books" data-price="85"
               data-img="images/Books/eeee75a2f49b7beb0973bcd413a7eb3e.jpg">Add to Cart</button>
           </div>
         </div>
@@ -685,8 +687,9 @@
             <span class="item-category">Tools</span>
             <h6 class="product-title">Color Set</h6>
             <span class="item-condition">Condition: Good · Full set</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$45</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Power Drill Set" data-category="Tools"
+              data-name="Power Drill Set" data-category="Tools" data-price="45"
               data-img="images/Tools/156983079a9a76b99fc12772160a8067.jpg">Add to Cart</button>
           </div>
         </div>
@@ -701,8 +704,9 @@
             <span class="item-category">Tools</span>
             <h6 class="product-title">Black Tool Kit</h6>
             <span class="item-condition">Condition: Very Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$35</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Garden Tool Kit" data-category="Tools"
+              data-name="Garden Tool Kit" data-category="Tools" data-price="35"
               data-img="images/Tools/1a271b3b1334a9a48001ad1451d41a19.jpg">Add to Cart</button>
           </div>
         </div>
@@ -717,8 +721,9 @@
             <span class="item-category">Tools</span>
             <h6 class="product-title">Painting Tools Set</h6>
             <span class="item-condition">Condition: Excellent</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$55</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Measuring Tools Set" data-category="Tools"
+              data-name="Measuring Tools Set" data-category="Tools" data-price="55"
               data-img="images/Tools/9ed20412d0cdce6373d62769cbff9c6d.jpg">Add to Cart</button>
           </div>
         </div>
@@ -733,8 +738,9 @@
             <span class="item-category">Tools</span>
             <h6 class="product-title">White Tool Kit</h6>
             <span class="item-condition">Condition: Good · Used twice</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$70</strong>
             <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
-              data-name="Electric Sander" data-category="Tools"
+              data-name="Electric Sander" data-category="Tools" data-price="70"
               data-img="images/Tools/f4cf67eb78d9202698ffabce0858c4ad.jpg">Add to Cart</button>
           </div>
         </div>
@@ -756,7 +762,7 @@
               <a href="index.html" class="footer-brand" id="footer-logo">Tradova.</a>
             </div>
             <p style="max-width:240px;">Where things find their next owner. Building a community through the joy of
-              sharing and swapping.</p>
+              shopping and sharing.</p>
             <div class="social-links mt-4">
               <ul class="list-unstyled d-flex flex-wrap gap-2">
                 <li><a href="#" id="social-fb" aria-label="Facebook">
@@ -785,7 +791,7 @@
             <h5 class="widget-title">Platform</h5>
             <ul class="menu-list border-animation-left">
               <li class="menu-item"><a href="#" id="footer-browse">Browse Items</a></li>
-              <li class="menu-item"><a href="#" id="footer-post">Post an Item</a></li>
+              <li class="menu-item"><a href="#" id="footer-post" data-bs-toggle="modal" data-bs-target="#postItemModal">Post an Item</a></li>
               <li class="menu-item"><a href="#" id="footer-how">How It Works</a></li>
               <li class="menu-item"><a href="#" id="footer-community">Community</a></li>
               <li class="menu-item"><a href="#" id="footer-about">About Us</a></li>
@@ -815,7 +821,7 @@
             <ul class="menu-list border-animation-left">
               <li class="menu-item"><a href="#" id="footer-safety">Safety Tips</a></li>
               <li class="menu-item"><a href="#" id="footer-faq">FAQs</a></li>
-              <li class="menu-item"><a href="#" id="footer-guidelines">Swap Guidelines</a></li>
+              <li class="menu-item"><a href="#" id="footer-guidelines">Shopping Guidelines</a></li>
               <li class="menu-item"><a href="#" id="footer-contact">Contact Us</a></li>
               <li class="menu-item"><a href="#" id="footer-privacy">Privacy Policy</a></li>
             </ul>
@@ -866,20 +872,20 @@
       </svg>
       <span>Home</span>
     </a>
-    <a href="#" class="mobile-nav-item post-btn" id="mob-nav-post" aria-label="Post an Item">
+    <button class="mobile-nav-item post-btn" id="mob-nav-post" data-bs-toggle="modal" data-bs-target="#postItemModal" aria-label="Post an Item" style="border:none;background:transparent;">
       <div class="post-icon-wrap">
         <svg viewBox="0 0 24 24" width="22" height="22">
           <use xlink:href="#plus"></use>
         </svg>
       </div>
       <span>Post</span>
-    </a>
-    <button class="mobile-nav-item" id="mob-nav-swaps" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-      aria-label="My Swaps">
+    </button>
+    <button class="mobile-nav-item" id="mob-nav-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+      aria-label="My Cart">
       <svg viewBox="0 0 24 24">
-        <use xlink:href="#swap"></use>
+        <use xlink:href="#shopping-bag"></use>
       </svg>
-      <span>Swaps</span>
+      <span>Cart</span>
     </button>
     <a href="#" class="mobile-nav-item" id="mob-nav-messages" aria-label="Messages">
       <svg viewBox="0 0 24 24">
@@ -898,6 +904,109 @@
   <!-- ======================================================
        SCRIPTS
   ======================================================= -->
+  <!-- ===== POST ITEM MODAL ===== -->
+  <div class="modal fade" id="postItemModal" tabindex="-1" aria-labelledby="postItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 16px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title" id="postItemModalLabel" style="font-weight: 700;">Post an Item</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="postItemForm">
+            <div class="mb-3">
+              <label for="postItemName" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Product Name</label>
+              <input type="text" class="form-control" id="postItemName" required placeholder="e.g. Vintage Jacket">
+            </div>
+            <div class="mb-3">
+              <label for="postItemCondition" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Condition</label>
+              <select class="form-select" id="postItemCondition" required>
+                <option value="" disabled selected>Select condition</option>
+                <option value="New">New</option>
+                <option value="Like New">Like New</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="postItemPrice" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Price</label>
+              <input type="text" class="form-control" id="postItemPrice" required placeholder="e.g. $25 (or Trade)">
+            </div>
+            <div class="mb-4">
+              <label for="postItemCategory" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Category</label>
+              <select class="form-select" id="postItemCategory" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Books">Books</option>
+                <option value="Tools">Tools</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Kids & Toys">Kids & Toys</option>
+                <option value="Sports">Sports</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2">Confirm & Post via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 16px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title" id="checkoutModalLabel" style="font-weight: 700;">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="checkoutForm">
+            <div class="mb-3">
+              <label for="checkoutGov" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Governorate / City</label>
+              <input type="text" class="form-control" id="checkoutGov" required placeholder="e.g. Cairo">
+            </div>
+            <div class="mb-3">
+              <label for="checkoutStreet" class="form-label" style="font-weight: 600; font-size: 0.9rem;">Street</label>
+              <input type="text" class="form-control" id="checkoutStreet" required placeholder="e.g. 15 Talaat Harb St">
+            </div>
+            <div class="mb-3">
+              <label for="checkoutHouse" class="form-label" style="font-weight: 600; font-size: 0.9rem;">House / Apartment No.</label>
+              <input type="text" class="form-control" id="checkoutHouse" required placeholder="e.g. Building 12, Apt 4">
+            </div>
+            <div class="mb-4">
+              <div class="alert alert-info d-flex align-items-center mb-0" role="alert" style="background-color: #EAF2E8; color: #2D5A27; border: none; border-radius: 8px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="me-2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
+                <div>
+                  <strong>Payment Method:</strong> Cash on Delivery
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2">Complete Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SUCCESS SUCCESS MODAL ===== -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center p-4" style="border-radius: 16px;">
+        <div class="mb-3 d-flex justify-content-center">
+          <div style="width: 72px; height: 72px; background: #EAF2E8; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <svg width="40" height="40" viewBox="0 0 24 24" style="color: #2D5A27;"><use xlink:href="#check"></use></svg>
+          </div>
+        </div>
+        <h4 style="font-weight: 700; color: #2E2E2E;">Order Requested!</h4>
+        <p style="color: #888; font-size: 0.9rem;">Your order has been placed successfully. Thank you!</p>
+        <button type="button" class="btn btn-primary w-100 mt-2" data-bs-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+
+
   <script src="js/jquery.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/SmoothScroll.js"></script>
@@ -1030,7 +1139,9 @@
       badge.textContent = cart.length;
       if (badgeMob) { badgeMob.style.display = 'inline'; badgeMob.textContent = cart.length; }
 
+      let totalAmount = 0;
       cart.forEach((item, idx) => {
+        if (item.price) totalAmount += parseFloat(item.price);
         const li = document.createElement('li');
         li.className = 'list-group-item';
         li.style.cssText = 'border:none;border-bottom:1px solid #E0D8CC;padding:0.75rem 0;';
@@ -1038,7 +1149,10 @@
           <div class="d-flex gap-3 align-items-center">
             <img src="${item.img}" alt="${item.name}" style="width:52px;height:52px;object-fit:cover;border-radius:8px;flex-shrink:0;">
             <div style="flex:1;min-width:0;">
-              <p style="font-size:0.85rem;font-weight:600;color:#2E2E2E;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</p>
+              <div class="d-flex justify-content-between">
+                <p style="font-size:0.85rem;font-weight:600;color:#2E2E2E;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</p>
+                <span style="font-size:0.85rem;font-weight:700;color:#2D5A27;">$${item.price || '0.00'}</span>
+              </div>
               <p style="font-size:0.75rem;color:#888;margin:2px 0 0;">${item.category}</p>
             </div>
             <button class="btn-close" style="font-size:0.6rem;flex-shrink:0;" aria-label="Remove" data-idx="${idx}"></button>
@@ -1050,7 +1164,7 @@
         list.appendChild(li);
       });
 
-      totalEl.textContent = cart.length + ' item' + (cart.length !== 1 ? 's' : '');
+      totalEl.textContent = '$' + totalAmount.toFixed(2);
     }
 
     // Wire up all Add to Cart buttons (present + future via delegation)
@@ -1062,6 +1176,7 @@
         name: btn.dataset.name,
         category: btn.dataset.category,
         img: btn.dataset.img,
+        price: btn.dataset.price || '0'
       };
       // Prevent duplicates
       if (cart.some(c => c.name === item.name)) {
@@ -1100,7 +1215,130 @@
         // Show corresponding content based on data-tab attribute
         const currentTab = btn.getAttribute('data-tab');
         document.getElementById(`tab-content-${currentTab}`).classList.add('active');
+        
+        // When tab is clicked, reset any search filters
+        document.querySelectorAll('.product-card:not(.product-card-cta)').forEach(card => card.style.display = 'block');
       });
+    });
+
+    // ── CATEGORY CLICK SCROLL LOGIC ────────────────────────
+    const catMappings = {
+      'cat-apparel': 'tab-clothes',
+      'cat-books': 'tab-books',
+      'cat-tools': 'tab-tools'
+    };
+    Object.keys(catMappings).forEach(catId => {
+      const catEl = document.getElementById(catId);
+      if (catEl) {
+        catEl.style.cursor = 'pointer';
+        catEl.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+          const tabId = catMappings[catId];
+          document.getElementById(tabId)?.click();
+        });
+      }
+    });
+
+    // ── SEARCH LOGIC ───────────────────────────────────────
+    function performSearch(query) {
+      if (!query) return;
+      query = query.toLowerCase().trim();
+      
+      const popup = document.getElementById('searchPopup');
+      if (popup) popup.classList.remove('is-visible');
+      
+      document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+      
+      const allCards = document.querySelectorAll('.product-card:not(.product-card-cta)');
+      let firstMatchFound = false;
+      
+      allCards.forEach(card => {
+        const title = card.querySelector('.product-title')?.innerText.toLowerCase() || '';
+        const cat = card.querySelector('.item-category')?.innerText.toLowerCase() || '';
+        
+        if (title.includes(query) || cat.includes(query)) {
+          card.style.display = 'block';
+          if (!firstMatchFound) {
+            firstMatchFound = true;
+            // Activate the tab for the first matching item
+            const parentTab = card.closest('.tab-content');
+            if (parentTab && !parentTab.classList.contains('active')) {
+               const tabId = parentTab.id.replace('tab-content-', 'tab-');
+               document.getElementById(tabId)?.click();
+            }
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.getElementById('hero-search-btn')?.addEventListener('click', () => {
+      performSearch(document.getElementById('hero-search-input').value);
+    });
+    
+    document.getElementById('hero-search-input')?.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter') performSearch(e.target.value);
+    });
+
+    document.querySelector('#searchPopup form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      performSearch(document.getElementById('search-form').value);
+    });
+
+    // ── POST ITEM WHATSAPP LOGIC ────────────────────────────
+    document.getElementById('postItemForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('postItemName').value;
+      const condition = document.getElementById('postItemCondition').value;
+      const price = document.getElementById('postItemPrice').value;
+      const category = document.getElementById('postItemCategory').value;
+      
+      const wMsg = `i want to sell my product in tradova\nProduct Name: ${name}\nCondition: ${condition}\nPrice: ${price}\nCategory: ${category}\n\n*Note: I will attach the product image in this chat.*`;
+      // Use 201018861417 as WhatsApp number with country code +20
+      const waUrl = `https://wa.me/201018861417?text=${encodeURIComponent(wMsg)}`;
+      
+      window.open(waUrl, '_blank');
+      
+      // Close modal and reset form
+      const modalInstance = bootstrap.Modal.getInstance(document.getElementById('postItemModal'));
+      if(modalInstance) modalInstance.hide();
+      this.reset();
+    });
+
+    // ── CHECKOUT MODAL LOGIC ────────────────────────────────
+    document.getElementById('checkout-btn')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      if(cart.length === 0) return;
+      
+      // Hide cart offcanvas
+      const cartEl = document.getElementById('offcanvasCart');
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(cartEl);
+      if(bsOffcanvas) bsOffcanvas.hide();
+      
+      // Show checkout modal
+      let checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+      if(!checkoutModal) checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+      checkoutModal.show();
+    });
+
+    document.getElementById('checkoutForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide checkout modal
+      const checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+      if(checkoutModal) checkoutModal.hide();
+      
+      // Show success modal
+      let successModal = bootstrap.Modal.getInstance(document.getElementById('successModal'));
+      if(!successModal) successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      
+      // Clear cart
+      cart.length = 0;
+      updateCartUI();
+      this.reset();
     });
   </script>
 </body>
