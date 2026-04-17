@@ -251,19 +251,19 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-center flex-grow-1 gap-1 gap-lg-4">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#billboard" id="nav-home">Home</a>
+                  <a class="nav-link active" href="index.html#billboard" id="nav-home">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#categories" id="dropdownBrowse" data-bs-toggle="dropdown"
+                  <a class="nav-link dropdown-toggle" href="index.html#categories" id="dropdownBrowse" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Browse Categories</a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownBrowse">
-                    <li><a href="items.html?tab=tab-clothes" class="dropdown-item"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#shirt"></use></svg>Clothes</a></li>
-                    <li><a href="items.html?tab=tab-books" class="dropdown-item"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#book"></use></svg>Books</a></li>
-                    <li><a href="items.html?tab=tab-tools" class="dropdown-item"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#tool"></use></svg>Tools</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-clothes')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#shirt"></use></svg>Clothes</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-books')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#book"></use></svg>Books</a></li>
+                    <li><a href="#products" class="dropdown-item" onclick="document.getElementById('tab-tools')?.click()"><svg width="16" height="16" viewBox="0 0 24 24" class="me-2"><use xlink:href="#tool"></use></svg>Tools</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#how-it-works" id="nav-how">How It Works</a>
+                  <a class="nav-link" href="index.html#how-it-works" id="nav-how">How It Works</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#footer" id="nav-about">Contact Us</a>
@@ -301,228 +301,234 @@
   </nav>
 
   <!-- ======================================================
-       HERO / BILLBOARD SECTION
+       PRODUCTS — TABBED GRID
   ======================================================= -->
-  <section id="billboard">
+  <section id="products" class="products-section py-5">
     <div class="container">
-      <div class="hero-inner py-5">
 
-        <!-- Left: Text + Search + Stats -->
-        <div class="hero-text">
-          <div class="hero-eyebrow" data-aos="fade-up">
-            <svg viewBox="0 0 24 24">
-              <use xlink:href="#leaf"></use>
-            </svg>
-            Sustainable Shopping
-          </div>
-
-          <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="100">
-            Where things find<br>their <span class="accent">next owner.</span>
-          </h1>
-
-          <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">
-            <strong class="hero-highlight">Don't throw it. Tradova it.</strong> Join thousands of people shopping clothes,
-            books, and tools — reducing waste and saving money together.
-          </p>
-
-          <!-- Prominent Search Bar -->
-          <div class="hero-search" data-aos="fade-up" data-aos-delay="280">
-            <svg width="18" height="18" viewBox="0 0 24 24" style="color:#888;flex-shrink:0;">
-              <use xlink:href="#search"></use>
-            </svg>
-            <input type="text" id="hero-search-input" placeholder="What are you looking to buy today?"
-              aria-label="Search items to buy">
-            <button type="button" id="hero-search-btn">Search</button>
-          </div>
-
-          <div class="hero-actions" data-aos="fade-up" data-aos-delay="350">
-            <button class="btn btn-primary" id="hero-post-btn" data-bs-toggle="modal" data-bs-target="#postItemModal" style="border:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24">
-                <use xlink:href="#plus"></use>
-              </svg>
-              Post an Item
-            </button>
-            <a href="items.html" class="btn btn-outline-tradova" id="hero-browse-btn">
-              Browse Items
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div class="hero-stats" data-aos="fade-up" data-aos-delay="450">
-            <div class="stat-item">
-              <div class="stat-num">12k+</div>
-              <div class="stat-label">Active Swappers</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">34k</div>
-              <div class="stat-label">Items Listed</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">8.2t</div>
-              <div class="stat-label">Waste Avoided</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Image grid -->
-        <div class="hero-visual d-none d-lg-block" data-aos="fade-left" data-aos-delay="200">
-          <div class="hero-image-grid">
-            <div class="hero-img-main">
-              <img src="images/banner-image-1.jpg" alt="Swap items - featured apparel">
-            </div>
-            <div class="hero-img-sm">
-              <img src="images/banner-image-2.jpg" alt="Books for swap">
-            </div>
-            <div class="hero-img-sm">
-              <img src="images/banner-image-3.jpg" alt="Tools available for swap">
-            </div>
-          </div>
-          <div class="hero-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24">
-              <use xlink:href="#check"></use>
-            </svg>
-            Verified Sustainable Community
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       HOW IT WORKS / FEATURES
-  ======================================================= -->
-  <section class="features" id="how-it-works">
-    <div class="container">
-      <div class="features-header" data-aos="fade-up">
-        <p class="label">Simple Process</p>
-        <h2>How Tradova Works</h2>
-      </div>
-      <div class="row g-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-6 col-md-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#plus"></use>
-              </svg>
-            </div>
-            <h4>Post Your Item</h4>
-            <p>List anything you no longer need — clothes, books, or tools — in under 2 minutes.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#search"></use>
-              </svg>
-            </div>
-            <h4>Browse & Discover</h4>
-            <p>Find items you love from fellow community members in your area.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#shopping-bag"></use>
-              </svg>
-            </div>
-            <h4>Secure Checkout</h4>
-            <p>Add to cart and complete checkout securely with cash on delivery.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="#leaf"></use>
-              </svg>
-            </div>
-            <h4>Shop &amp; Sustain</h4>
-            <p>Buy pre-loved items, reduce waste, and grow your sustainable lifestyle.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       CATEGORIES
-  ======================================================= -->
-  <section id="categories" class="categories overflow-hidden">
-    <div class="container">
-      <div class="d-flex align-items-end justify-content-between mb-4" data-aos="fade-up">
+      <!-- Header -->
+      <div class="section-header-row mb-4" data-aos="fade-up">
         <div>
-          <span class="section-label">What to Buy</span>
-          <h2 class="section-title-lg mb-0">Browse Categories</h2>
+          <span class="section-label">Browse by Category</span>
+          <h4 class="mb-0">Our Items</h4>
         </div>
-        <a href="#" class="btn-link d-none d-md-flex" id="browse-all-cats-btn">See all categories</a>
+        <a href="#" class="btn-link" id="view-all-products-btn">View All</a>
       </div>
-      <div class="row g-3 open-up justify-content-center" data-aos="zoom-out">
-        <!-- Apparel -->
-        <div class="col-6 col-md-4">
-          <div class="cat-card" id="cat-apparel">
-            <img src="images/cat-item1.jpg" alt="Apparel category">
-            <div class="cat-overlay">
-              <div class="cat-icon">
-                <!-- T-shirt line icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" />
-                </svg>
-              </div>
-              <div class="cat-name">Clothes</div>
-              <div class="cat-count">3,400+ items</div>
-              <a href="#" class="cat-cta" id="cat-apparel-link">Browse clothes →</a>
-            </div>
+
+      <!-- Category Tabs -->
+      <div class="product-tabs" data-aos="fade-up" data-aos-delay="80">
+        <button class="product-tab active" data-tab="clothes" id="tab-clothes">👕 Clothes</button>
+        <button class="product-tab" data-tab="books" id="tab-books">📚 Books</button>
+        <button class="product-tab" data-tab="tools" id="tab-tools">🔧 Tools</button>
+      </div>
+
+      <!-- ── CLOTHES ── -->
+      <div class="products-grid tab-content active" id="tab-content-clothes" data-aos="fade-up" data-aos-delay="120">
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Clothes/banner-image-1.jpg" alt="Clothes item 1">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Clothes</span>
+            <h6 class="product-title">Casual Cotton Shirt</h6>
+            <span class="item-condition">Condition: Excellent · Size L</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$110</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Casual Cotton Shirt" data-category="Clothes" data-price="110"
+              data-img="images/Clothes/banner-image-1.jpg">Add to Cart</button>
           </div>
         </div>
-        <!-- Books -->
-        <div class="col-6 col-md-4">
-          <div class="cat-card" id="cat-books">
-            <img src="images/Books/8a7b1700538f90df9c53ba5b1328aaca.jpg" alt="Books and Library category">
-            <div class="cat-overlay">
-              <div class="cat-icon">
-                <!-- Book line icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                </svg>
-              </div>
-              <div class="cat-name">Library</div>
-              <div class="cat-count">2,100+ books</div>
-              <a href="#" class="cat-cta" id="cat-books-link">Browse Books →</a>
-            </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Clothes/1cecf33ee0278c3bf6f7718e0228cd1a.jpg" alt="Clothes item 2">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge eco">🌿 Eco Pick</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Clothes</span>
+            <h6 class="product-title">Vintage Outfit</h6>
+            <span class="item-condition">Condition: Good · Size M</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$135</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Vintage Jacket" data-category="Clothes" data-price="135"
+              data-img="images/Clothes/1cecf33ee0278c3bf6f7718e0228cd1a.jpg">Add to Cart</button>
           </div>
         </div>
-        <!-- Tools -->
-        <div class="col-6 col-md-4">
-          <div class="cat-card" id="cat-tools">
-            <img src="images/cat-item3.jpg" alt="Tools category">
-            <div class="cat-overlay">
-              <div class="cat-icon">
-                <!-- Wrench line icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                </svg>
-              </div>
-              <div class="cat-name">Tools</div>
-              <div class="cat-count">1,800+ tools</div>
-              <a href="#" class="cat-cta" id="cat-tools-link">Browse Tools →</a>
-            </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Clothes/6b15f3ded429f410e5475d7496b6fc37.jpg" alt="Clothes item 3">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Clothes</span>
+            <h6 class="product-title"> Old Money Outfit</h6>
+            <span class="item-condition">Condition: Like New · Size S</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$150</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Linen Summer Dress" data-category="Clothes" data-price="150"
+              data-img="images/Clothes/6b15f3ded429f410e5475d7496b6fc37.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Placeholder 4th card so grid looks full on desktop -->
+        <div class="product-card product-card-cta">
+          <div class="product-card-cta-inner">
+            <svg width="36" height="36" viewBox="0 0 24 24" style="color:#2D5A27;"><use xlink:href="#plus"></use></svg>
+            <p>Have clothes to sell?</p>
+            <button class="btn btn-outline-tradova btn-sm" data-bs-toggle="modal" data-bs-target="#postItemModal">Post an Item</button>
           </div>
         </div>
       </div>
+
+      <!-- ── BOOKS ── -->
+      <div class="products-grid tab-content" id="tab-content-books">
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Books/8a7b1700538f90df9c53ba5b1328aaca.jpg" alt="Book 1">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Books</span>
+            <h6 class="product-title">Forest Collection</h6>
+            <span class="item-condition">Condition: Very Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$45</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Novel Collection" data-category="Books" data-price="45"
+              data-img="images/Books/8a7b1700538f90df9c53ba5b1328aaca.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Books/8d2bea04d7ee666ab74e47084cf707ad.jpg" alt="Book 2">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge eco">🌿 Eco Pick</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Books</span>
+            <h6 class="product-title">Self-Development Book</h6>
+            <span class="item-condition">Condition: Like New</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$60</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Self-Development Book" data-category="Books" data-price="60"
+              data-img="images/Books/8d2bea04d7ee666ab74e47084cf707ad.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Books/96c3980f6c14c046ad3f231dc15efd3d.jpg" alt="Book 3">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Books</span>
+            <h6 class="product-title">Science &amp; Tech Book</h6>
+            <span class="item-condition">Condition: Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$75</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Science &amp; Tech Book" data-category="Books" data-price="75"
+              data-img="images/Books/96c3980f6c14c046ad3f231dc15efd3d.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Books/eeee75a2f49b7beb0973bcd413a7eb3e.jpg" alt="Book 4">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge eco">🌿 Eco Pick</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Books</span>
+            <h6 class="product-title">Classic Literature</h6>
+            <span class="item-condition">Condition: Excellent</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$85</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Classic Literature" data-category="Books" data-price="85"
+              data-img="images/Books/eeee75a2f49b7beb0973bcd413a7eb3e.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TOOLS ── -->
+      <div class="products-grid tab-content" id="tab-content-tools">
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Tools/156983079a9a76b99fc12772160a8067.jpg" alt="Tool 1">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Tools</span>
+            <h6 class="product-title">Color Set</h6>
+            <span class="item-condition">Condition: Good · Full set</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$45</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Power Drill Set" data-category="Tools" data-price="45"
+              data-img="images/Tools/156983079a9a76b99fc12772160a8067.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Tools/1a271b3b1334a9a48001ad1451d41a19.jpg" alt="Tool 2">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge eco">🌿 Eco Pick</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Tools</span>
+            <h6 class="product-title">Black Tool Kit</h6>
+            <span class="item-condition">Condition: Very Good</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$35</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Garden Tool Kit" data-category="Tools" data-price="35"
+              data-img="images/Tools/1a271b3b1334a9a48001ad1451d41a19.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Tools/9ed20412d0cdce6373d62769cbff9c6d.jpg" alt="Tool 3">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge">New</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Tools</span>
+            <h6 class="product-title">Painting Tools Set</h6>
+            <span class="item-condition">Condition: Excellent</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$55</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Measuring Tools Set" data-category="Tools" data-price="55"
+              data-img="images/Tools/9ed20412d0cdce6373d62769cbff9c6d.jpg">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-img">
+            <img src="images/Tools/f4cf67eb78d9202698ffabce0858c4ad.jpg" alt="Tool 4">
+            <button class="btn-icon btn-wishlist" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg></button>
+            <span class="item-badge eco">🌿 Eco Pick</span>
+          </div>
+          <div class="product-card-body">
+            <span class="item-category">Tools</span>
+            <h6 class="product-title">White Tool Kit</h6>
+            <span class="item-condition">Condition: Good · Used twice</span>
+            <strong style="color:var(--color-green); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; display: block;">$70</strong>
+            <button class="btn btn-primary btn-sm w-100 add-to-cart-btn"
+              data-name="Electric Sander" data-category="Tools" data-price="70"
+              data-img="images/Tools/f4cf67eb78d9202698ffabce0858c4ad.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
-
-
-  
   <!-- ======================================================
        FOOTER
   ======================================================= -->
@@ -850,13 +856,7 @@
       item.addEventListener('click', function (e) {
         if (this.tagName.toLowerCase() === 'button') return; 
         if (this.id === 'mob-nav-categories') {
-          // It's a link, let it navigate smoothly
-          const target = document.querySelector('#categories');
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-            history.pushState(null, null, '#categories');
-          }
+          // In items.html, it's a link to index.html#categories, let it natively redirect
         }
       });
     });
@@ -1084,8 +1084,9 @@
         catEl.style.cursor = 'pointer';
         catEl.addEventListener('click', (e) => {
           e.preventDefault();
+          document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
           const tabId = catMappings[catId];
-          window.location.href = 'items.html?tab=' + tabId;
+          document.getElementById(tabId)?.click();
         });
       }
     });
@@ -1094,7 +1095,34 @@
     function performSearch(query) {
       if (!query) return;
       query = query.toLowerCase().trim();
-      window.location.href = 'items.html?search=' + encodeURIComponent(query);
+      
+      const popup = document.getElementById('searchPopup');
+      if (popup) popup.classList.remove('is-visible');
+      
+      document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+      
+      const allCards = document.querySelectorAll('.product-card:not(.product-card-cta)');
+      let firstMatchFound = false;
+      
+      allCards.forEach(card => {
+        const title = card.querySelector('.product-title')?.innerText.toLowerCase() || '';
+        const cat = card.querySelector('.item-category')?.innerText.toLowerCase() || '';
+        
+        if (title.includes(query) || cat.includes(query)) {
+          card.style.display = 'block';
+          if (!firstMatchFound) {
+            firstMatchFound = true;
+            // Activate the tab for the first matching item
+            const parentTab = card.closest('.tab-content');
+            if (parentTab && !parentTab.classList.contains('active')) {
+               const tabId = parentTab.id.replace('tab-content-', 'tab-');
+               document.getElementById(tabId)?.click();
+            }
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
 
     document.getElementById('hero-search-btn')?.addEventListener('click', () => {
@@ -1158,6 +1186,24 @@
       cart.length = 0;
       updateCartUI();
       this.reset();
+    });
+  </script>
+
+  <script>
+    // Handle tab or search selection on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const search = urlParams.get('search');
+      if (search) {
+        document.getElementById('search-form').value = search;
+        if (typeof performSearch === 'function') performSearch(search);
+      } else {
+        const tab = urlParams.get('tab');
+        if (tab) {
+          const tabBtn = document.getElementById(tab);
+          if (tabBtn) tabBtn.click();
+        }
+      }
     });
   </script>
 </body>
